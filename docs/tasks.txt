@@ -1,0 +1,2 @@
+(1) --> For each album page
+- adjust images so it can take both landscape and portrait images and still have a responsive design
