@@ -1,0 +1,100 @@
+<!-- PROLOGUE DOCUMENTATION
+Author: Matthew Samaha
+Date Created: Augut 5 2024
+Date Updated: 
+Version: 1.0.0
+Purpose:
+License: 
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samaha Photography Galleries</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/album_page.css">
+</head>
+<body>
+
+    <div class="header">
+        <a href="" class="logo">Matthew Samaha</a>
+        <div class="header-content">
+            <div class="header-left">
+                <a class="active" href="../../index.html">Home</a>
+                <a href="home_gallery.html">Galleries</a>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="hero-container">
+        <div class="hero-image">
+            <img src="../../assets/images/waterfowl/merganser.jpg" class="hero-img">
+            <div class="hero-text">
+                <h2>Matthew Samaha Photography</h2>
+                <p>Student | Photographer</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-section">
+        <h1>Artist's Favourites</h1>
+        <div class="gallery">
+            <img src="../../assets/images/hawks/ch1.jpg" alt="Image 1">
+            <img src="../../assets/images/songbirds/catbird1.jpg" alt="Image 2">
+            <img src="../../assets/images/songbirds/kingbird1.jpg" alt="Image 3">
+            <img src="../../assets/images/waterfowl/grebe3.jpg" alt="Image 4">
+            <img src="../../assets/images/hawks/ch2.jpg" alt="Image 5">
+            
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    
+    
+
+
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Matthew Samaha. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../../index.html">Home</a>
+            <a href="home_gallery.html">Galleries</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+        // event logger
+        // whenever a link is clicked by a client; it loggs the actions
+        document.addEventListener('DOMContentLoaded', () => {
+        document.body.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                const linkHref = event.target.href;
+                fetch('/log', {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ url: linkHref, timestamp: new Date() })
+                }).catch(error => console.error('Error logging click:', error));
+            }
+        });
+    });
+    </script>
+</body>
+</html>

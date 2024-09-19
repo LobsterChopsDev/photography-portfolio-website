@@ -1,0 +1,189 @@
+<!-- PROLOGUE DOCUMENTATION
+Author: Matthew Samaha
+Date Created: Augut 5 2024
+Date Updated: 
+Version: 1.0.0
+Purpose:
+License: 
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samaha Photography Blog</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+    <div class="header">
+        <a href="" class="logo">Matthew Samaha</a>
+        <div class="header-content">
+            <div class="header-left">
+                <a class="active" href="index.html">Home</a>
+                <a href="pages/pages_galleries/home_gallery.html">Gallery</a>
+            </div>
+            <!-- I MAY NOT NEED THIS
+             instead of having to deal with register and login, stuff, for the blog posts and comments, ill add functionality so under each blog 
+             will be a comment section where users can quickly register to make a comment and post it by adding a name, and a comment. this acts as a message
+             board so the comment stays on the blog post for the entire time. no need to register users.
+             -->
+             <!-- 
+             <div class="header-right">
+                <a href="pages/pages_user/register-login.html" class="register-button">Register</a>
+                <div class="login-container">
+                    <form action="">
+                        <input type="text" placeholder="Username" name="username">
+                        <input type="password" placeholder="Password" name="psw">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+             -->
+            
+        </div>
+    </div>
+
+    <div class="hero-container">
+        <div class="hero-image">
+            <img src="assets/images/waterfowl/merganser.jpg" class="hero-img">
+            <div class="hero-text">
+                <h2>Matthew Samaha Photography</h2>
+                <p>Student | Photographer</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <p>The aim for this platform is to share my passion for wildlife photography and showcase my technical projects</p>
+    </div>
+
+    <div class="resume-section">
+        <h2>About Me</h2>
+        <hr>
+        <div class="about-container">
+            <div class="column">
+                <p>Second-year Student</p>
+                <p>Part-Time</p>
+                <p>Volunteer</p>
+            </div>
+            <div class="column">
+                <p><strong>Sheridan College</strong></p>
+                <p><strong>Canadian Armed Forces</strong></p>
+                <p><strong>Oakville Sea Cadets</strong></p>
+            </div>
+        </div>
+        <br><br><br>
+        <p>Programming: Python, Java</p>
+        <p>Scripting: Bash, Windows PowerShell</p>
+        <p>Web Development: HTML, CSS, JavaScripts</p>
+        <br>
+    </div>
+
+    
+
+    
+
+
+    <div class="technical-projects">
+        <h2>Technical Projects</h2>
+        <hr>
+        <div class="project">
+            <h3>Nest Quest</h3>
+            <p><strong>Languages: </strong>Java, LibGDX</p>
+            <a class="project-link" href="#">Link to Github source code</a>
+            <h4>Embark on an adventure in Nest Quest, a simple 2D game using LibGDX! This game is not just a fun challenge; it's a reflection of my understanding after covering object-oriented programming with Java. Explore simple and beautiful crafted pixel art, created by me using GIMP. Provided is a link to the source code.</h4>
+            <p><strong>Learning Outcomes: </strong>Java object-oriented programming</p>
+        </div>
+        
+        
+    </div>
+
+
+    <h1>Featured Photos</h1>
+
+    <div class="gallery">
+        <img src="assets/images/songbirds/woodpecker.jpg" alt="Image 1">
+        <img src="assets/images/waterfowl/grebe3.jpg" alt="Image 2">
+        <img src="assets/images/songbirds/catbird1.jpg" alt="Image 3">
+        <img src="assets/images/hawks/rth4.jpg" alt="Image 4">
+    </div>
+
+
+
+    
+
+    <!-- Extra Links Section -->
+    <div class="extra-links">
+        <h2>Connect with Me</h2>
+        <p>Check out my profiles on GitHub and LinkedIn:</p>
+        <a href="https://github.com/your-username" target="_blank" class="link-button">GitHub</a>
+        <a href="https://linkedin.com/in/your-username" target="_blank" class="link-button">LinkedIn</a>
+    </div>
+    
+    <!-- Contact Form Section -->
+    <div class="form-container">
+        <h2>Send a Message</h2>
+        <form action="/contact" method="post" class="formcarry-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="fullName" required />
+    
+            <label for="email">Your Email Address</label>
+            <input type="email" id="email" name="email" required />
+    
+            <label for="message">Your Message</label>
+            <textarea name="message" id="message" cols="30" rows="4" required></textarea>
+    
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+
+
+
+
+
+    <div class="clearfix"></div>
+
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Matthew Samaha. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="pages/pages_galleries/home_gallery.html">Galleries</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+        // event logger
+        // whenever a link is clicked by a client; it loggs the actions
+        document.addEventListener('DOMContentLoaded', () => {
+        document.body.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                const linkHref = event.target.href;
+                fetch('/log', {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ url: linkHref, timestamp: new Date() })
+                }).catch(error => console.error('Error logging click:', error));
+            }
+        });
+    });
+
+     
+    </script>
+</body>
+</html>

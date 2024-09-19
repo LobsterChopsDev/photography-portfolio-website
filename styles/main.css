@@ -1,0 +1,818 @@
+/* GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER STYLES */
+.header {
+    background-color: #333; /* Dark background for the header */
+    color: #fff; /* White text color */
+    display: flex;
+    justify-content: space-between; /* Space between logo and content */
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5); /* Light shadow for a subtle 3D effect */
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure the header stays above other content */
+    border-bottom: 3px solid #0066cc; /* Accent color line at the top */
+    height: 75px;
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    position: absolute; /* Position the logo absolutely */
+    left: 20px; /* Adjust positioning */
+}
+
+.header-content {
+    display: flex;
+    justify-content: center; /* Center the content */
+    flex: 1; /* Allow the content to take available space */
+}
+
+.header-left {
+    display: flex;
+    gap: 100px; /* Space between links */
+}
+
+.header-left a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.header-left a.active {
+    border-bottom: 2px solid #fff; /* Underline for the active link */
+}
+
+.header-left a:hover {
+    text-decoration: none; /* Underline effect on hover */
+}
+
+/*
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.register-button {
+    background-color: #0066cc; 
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.register-button:hover {
+    background-color: #01478e; 
+}
+
+.login-container {
+    margin-left: 20px;
+}
+
+.login-container form {
+    display: flex;
+    align-items: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.login-container button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #c2c2c2;
+}
+    */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure full width for responsive design */
+    }
+
+    .header-left {
+        margin: 10px 0;
+    }
+}
+
+
+
+
+/* hero-container styles */
+/* Styles for the hero-container */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    overflow: hidden; /* Hide overflow to ensure the image fits */
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    display: block; /* Remove default spacing below the image */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center text in the container */
+    text-align: center;
+    color: #fff; /* White text color */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the text box */
+}
+
+.hero-text h2 {
+    font-size: 36px; /* Adjust font size as needed */
+    margin: 0;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 18px; /* Adjust font size as needed */
+    margin: 10px 0 0;
+    font-weight: lighter;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .hero-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .hero-text h2 {
+        font-size: 28px; /* Adjust font size for smaller screens */
+    }
+
+    .hero-text p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* define fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 3;
+    }
+}
+
+.hero-text {
+    animation: fadeIn 5.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-img {
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+
+
+/* Styles for the about-section */
+.about-section {
+    background-color: #f4f4f4; /* Light background color for contrast */
+    color: #333; /* Dark text color for readability */
+    padding: 40px 20px; /* Padding for spacing around the content */
+    text-align: center; /* Center-align text */
+    border-top: 1px solid #ddd; /* Subtle border to separate from other sections */
+    border-bottom: 1px solid #ddd; /* Subtle border at the bottom */
+    margin-top: 20px; /* Space above the section */
+    margin-bottom: 20px; /* Space below the section */
+    max-width: 800px; /* Limit the width of the section */
+    margin-left: auto; /* Center-align the section */
+    margin-right: auto; /* Center-align the section */
+}
+
+/* Optional styling for the paragraph */
+.about-section p {
+    font-size: 22px; /* Font size for the paragraph text */
+    line-height: 1.6; /* Line height for better readability */
+    margin: 0; /* Remove default margins */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+    }
+    
+    .about-section p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Add indentation to strong elements with the class 'indent' */
+strong.indent {
+    margin-left: 20px; /* Adjust the value to control the amount of indentation */
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 45%; /* Adjust as needed */
+}
+
+.column p {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+
+
+
+
+
+.resume-section {
+    padding: 40px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.resume-section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.resume-section hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 0px;
+}
+
+.column {
+    width: calc(50% - 10px);
+}
+
+.column p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.resume-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resume-section {
+        padding: 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .resume-section h2 {
+        font-size: 28px;
+    }
+
+    .resume-section p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+/* Styles for the Featured Photos section */
+h1 {
+    text-align: center; /* Center-align the heading */
+    font-size: 36px; /* Adjust font size */
+    color: #333; /* Dark text color for contrast */
+    margin: 40px 0; /* Space above and below the heading */
+}
+
+/* Gallery container styling */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Gallery image styling */
+.gallery img {
+    margin: 10px;
+    cursor: pointer;
+    max-width: 300px; /* Ensure images don't exceed this width */
+    width: 100%; /* Make images responsive within their container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for gallery images */
+.gallery img:hover {
+    transform: scale(1.15); /* Slightly enlarge the image on hover */
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 1.0); /* Add shadow for a lifted effect */
+}
+
+
+
+
+/* Styles for the Technical Projects section */
+.technical-projects {
+    padding: 20px;
+    background-color: #f7f7f7; /* Light background to match other sections */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Centered with margin */
+    max-width: 1200px; /* Max width to fit the screen */
+    width: 90%; /* Responsive width for different screen sizes */
+}
+
+.technical-projects h2 {
+    text-align: center; /* Center-align the section heading */
+    font-size: 36px; /* Consistent font size for headings */
+    color: #333; /* Dark text color for contrast */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+
+.technical-projects hr {
+    border: 0;
+    height: 1px;
+    background: #ddd; /* Light gray line for separation */
+    margin: 20px 0; /* Space above and below the line */
+}
+
+.project {
+    padding: 20px; /* Increased padding for more spacious content */
+    border: 1px solid #ccc; /* Light border for each project */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 20px; /* Space between projects */
+    background-color: #f7f7f7; /* White background for projects */
+    width: calc(50% - 20px); /* Wider project boxes, adjusted for margin */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    float: left; /* Float projects side by side */
+}
+
+/* Styling for project titles */
+.project h3 {
+    font-size: 28px; /* Font size for project titles */
+    color: #333; /* Dark text color for consistency */
+    margin-bottom: 10px; /* Space below project title */
+}
+
+/* Styling for additional project information */
+.project p {
+    font-size: 16px; /* Font size for additional information */
+    color: #666; /* Lighter text color for additional info */
+    margin: 5px 0; /* Space around paragraphs */
+}
+
+.project strong {
+    color: #333; /* Dark color for emphasis */
+}
+
+/* Styling for project links */
+.project .project-link {
+    display: block;
+    margin-top: 10px; /* Space above the link */
+    color: #0066cc; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.project .project-link:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+.project h4 {
+    font-size: 16px; /* Font size for project description */
+    color: #666; /* Slightly lighter text color for descriptions */
+    margin-top: 10px; /* Space above the description */
+}
+
+/* Clearfix to ensure container clears floated elements */
+.technical-projects::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .technical-projects {
+        padding: 10px;
+    }
+
+    .project {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .technical-projects h2 {
+        font-size: 28px; /* Adjust heading size for smaller screens */
+    }
+
+    .project h3 {
+        font-size: 24px; /* Adjust project title size */
+    }
+
+    .project h4 {
+        font-size: 16px; /* Adjust project description size */
+    }
+
+    .project p {
+        font-size: 14px; /* Adjust font size for paragraphs */
+    }
+}
+
+
+/* Styles for the Featured Blog Posts section */
+.featured-blog-posts {
+    padding: 20px;
+    background-color: #f7f7f7; /* Light background to match other sections */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Centered with margin */
+    max-width: 1200px; /* Max width to fit the screen */
+    width: 90%; /* Responsive width for different screen sizes */
+}
+
+.featured-blog-posts h2 {
+    text-align: center; /* Center-align the section heading */
+    font-size: 36px; /* Consistent font size for headings */
+    color: #333; /* Dark text color for contrast */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.featured-blog-posts hr {
+    border: 0;
+    height: 1px;
+    background: #ddd; /* Light gray line for separation */
+    margin: 20px 0; /* Space above and below the line */
+}
+
+.blog-post {
+    padding: 20px; /* Increased padding for more spacious content */
+    border: 1px solid #ccc; /* Light border for each blog post */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 20px; /* Space between blog posts */
+    background-color: #f7f7f7; /* White background for blog posts */
+    width: calc(50% - 20px); /* Wider blog post boxes, adjusted for margin */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    float: left; /* Float blog posts side by side */
+    position: relative; /* For positioning of the featured image */
+}
+
+/* Styling for blog post images */
+.blog-image {
+    width: 100%; /* Full width of the blog post container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* Styling for blog post titles */
+.blog-post h3 {
+    font-size: 28px; /* Font size for blog post titles */
+    color: #333; /* Dark text color for consistency */
+    margin-bottom: 10px; /* Space below blog post title */
+}
+
+/* Styling for additional blog post information */
+.blog-post p {
+    font-size: 16px; /* Font size for additional information */
+    color: #666; /* Lighter text color for additional info */
+    margin: 5px 0; /* Space around paragraphs */
+}
+
+.blog-post strong {
+    color: #333; /* Dark color for emphasis */
+}
+
+/* Styling for blog post links */
+.blog-post .blog-link {
+    display: block;
+    margin-top: 10px; /* Space above the link */
+    color: #0066cc; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.blog-post .blog-link:hover {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+.blog-post h4 {
+    font-size: 18px; /* Font size for blog post summary */
+    color: #666; /* Slightly lighter text color for summaries */
+    margin-top: 10px; /* Space above the summary */
+}
+
+/* Clearfix to ensure container clears floated elements */
+.featured-blog-posts::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-blog-posts {
+        padding: 10px;
+    }
+
+    .blog-post {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .featured-blog-posts h2 {
+        font-size: 28px; /* Adjust heading size for smaller screens */
+    }
+
+    .blog-post h3 {
+        font-size: 24px; /* Adjust blog post title size */
+    }
+
+    .blog-post h4 {
+        font-size: 16px; /* Adjust blog post summary size */
+    }
+
+    .blog-post p {
+        font-size: 14px; /* Adjust font size for paragraphs */
+    }
+}
+
+
+/* Extra Links Section Styling */
+.extra-links {
+    padding: 20px;
+    background-color: #f7f7f7; /* Background color for the section */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Centered with margin */
+    max-width: 800px; /* Max width for the section */
+    width: 90%; /* Responsive width */
+    text-align: center; /* Center-align text and links */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow for a lifted effect */
+}
+
+/* Heading for Extra Links */
+.extra-links h2 {
+    font-size: 36px; /* Font size for the heading */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Paragraph for Extra Links */
+.extra-links p {
+    font-size: 18px; /* Font size for the paragraph */
+    color: #666; /* Slightly lighter text color */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Styling for link buttons */
+.link-button {
+    display: inline-block;
+    font-size: 18px; /* Font size for the links */
+    color: #fff; /* Text color */
+    background-color: #0066cc; /* Background color for the buttons */
+    padding: 10px 20px; /* Padding inside the buttons */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    margin: 10px; /* Space between buttons */
+}
+
+.link-button:hover {
+    background-color: #004d99; /* Darker background on hover */
+}
+
+
+
+
+/* Form Container Styling */
+.form-container {
+    padding: 20px;
+    background-color: #f7f7f7; /* Light gray background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px auto; /* Centered with margin */
+    max-width: 800px; /* Max width to fit content */
+    width: 90%; /* Responsive width for different screen sizes */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Slightly stronger shadow for a lifted effect */
+}
+
+/* Form Heading */
+.form-container h2 {
+    text-align: center; /* Center-align the heading */
+    font-size: 36px; /* Font size for the heading */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Form Styling */
+.formcarry-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Form Labels */
+.formcarry-form label {
+    font-size: 18px; /* Font size for labels */
+    color: #444; /* Slightly lighter dark color for contrast */
+    margin-bottom: 5px; /* Space below labels */
+    margin-top: 10px; /* Space above labels */
+}
+
+/* Form Inputs and Textareas */
+.formcarry-form input,
+.formcarry-form textarea {
+    font-size: 16px; /* Font size for inputs and textareas */
+    padding: 12px; /* Padding inside inputs */
+    border: 1px solid #888; /* Darker border for inputs */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below inputs */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in width */
+    background-color: #f7f7f7; /* White background for inputs */
+    color: #333; /* Dark text color */
+    transition: border-color 0.3s ease; /* Smooth transition for focus effect */
+}
+
+/* Focus State for Inputs */
+.formcarry-form input:focus,
+.formcarry-form textarea:focus {
+    border-color: #0056b3; /* Darker blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Form Button */
+.formcarry-form button {
+    background-color: #0056b3; /* Darker blue background color */
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size */
+    padding: 12px 20px; /* Padding inside button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Button Hover State */
+.formcarry-form button:hover {
+    background-color: #004494; /* Even darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .form-container h2 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .formcarry-form input,
+    .formcarry-form textarea {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .formcarry-form button {
+        font-size: 16px; /* Adjust button font size */
+    }
+}
+
+
+
+/* Footer Section Styling */
+.footer {
+    background-color: #333; /* Dark background to match header */
+    color: #fff; /* White text color */
+    padding: 20px; /* Spacing around the content */
+    text-align: center; /* Center-align the text and links */
+    border-top: 3px solid #0066cc; /* Accent color line at the top */
+}
+
+.footer-content {
+    max-width: 1200px; /* Limit the width of the content */
+    margin: 0 auto; /* Center-align the content */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center; /* Center-align the links */
+    gap: 20px; /* Space between the links */
+    margin-top: 10px; /* Space above the links */
+}
+
+.footer-links a {
+    color: #fff; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Font size for readability */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .footer-links {
+        margin-top: 15px; /* Space above links */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Adjust font size for links */
+        display: block; /* Stack links vertically */
+        margin: 5px 0; /* Space between links */
+    }
+}
+

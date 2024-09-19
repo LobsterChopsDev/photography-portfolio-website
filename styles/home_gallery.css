@@ -1,0 +1,76 @@
+/* Styles for the Galleries Section */
+.gallery-section {
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center-align text */
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.gallery-section h1 {
+    font-size: 36px; /* Font size for the heading */
+    color: #333; /* Dark text color for contrast */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Gallery container styling */
+.gallery-albums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align the gallery images */
+    gap: 20px; /* Space between images */
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual image styling */
+.album img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Adjusted max-width to make images smaller */
+    aspect-ratio: 7 / 5; /* Maintain landscape aspect ratio */
+    object-fit: cover; /* Cover the space of the container, preserving the aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners for a softer look */
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3); /* Optional: Add shadow for a lifted effect */
+}
+
+.album p {
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+}
+
+.album a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.album a:hover {
+    color: #007bff; /* Optional: Change color on hover */
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .album img {
+        max-width: 100%; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .album img {
+        max-width: 100%; /* Full width for very small screens */
+    }
+}
